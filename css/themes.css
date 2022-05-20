@@ -1,0 +1,11 @@
+.dark {
+  --background-dark: #3d1472; /* for dark mode */
+  --font-color-dark: #fff; /* for dark mode */
+  --background-light: #9f68e7; /* for light mode */
+  --font-color-light: #000; /* for light mode */
+  --page-font-size: 14px;
+  --page-font-family: Avenir;
+  --page-action-btn: #c70085;
+  --page-font-color: var(--font-color-dark); /* theme color for font */
+  --page-background-color: var(--background-dark); /* theme background color*/
+}

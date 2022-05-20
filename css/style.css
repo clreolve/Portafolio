@@ -1,0 +1,23 @@
+:root {
+  /* propiedades default */
+  --background: white;
+  --primary: #c4ddff;
+  --secondary: #7fb5ff;
+
+  /* message colors */
+  --alert: yellow;
+  --correct: green;
+  
+  /* button colors */
+
+  /*--font-base: */
+  --font-size: 1em;
+  --font-color: black;
+  --font-disable-color: darkgrey;
+  /*--font-family: Avenir;*/
+}
+
+
+#navbar{
+    /**/
+}
