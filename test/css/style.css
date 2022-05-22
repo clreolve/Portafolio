@@ -38,7 +38,7 @@ body {
   background-position: center;
 }
 
-#fondo p {
+#fondo p{
   color: white;
   font-size: 25vh;
 }
@@ -65,35 +65,5 @@ body {
   max-width: 600px;
   padding: 50px;
   background: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-.type_machine_text {
-  /*
-  width: [numero de caracteres]ch
-  animation: typing 2s steps([numero de caracteres]),
-   blink 0.5s infinite step-end alternate;
-  overflow: hidden;
-  */
-  font-family: monospace;
-  display: block;
-  white-space: nowrap;
-  border-right: 4px solid;
-  width: 4ch;
-
-  animation: typing 2s steps(4),
-   blink 0.5s infinite step-end alternate;
-  overflow: hidden;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+  box-shadow: 0 5px 15px rgba(0, 0, 0,.5);
 }
