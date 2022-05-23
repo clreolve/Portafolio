@@ -29,18 +29,16 @@ window.onscroll = function() {
 
 let delay_scroll = document.querySelectorAll(".delay_scroll");
 
-function delay_scrolled() {
+function simple_delay_scrolled() {
   let scrollTop = document.documentElement.scrollTop;
 
   for (var i=0; i<delay_scroll.length ; i++ ){
     let e = delay_scroll[i];
     let eheight = e.offsetTop;
-    if(eheight - 200 < scrollTop) {
+    if(eheight - 300 < scrollTop) {
       e.style.opacity = 1;
-    } else {
-      e.style.opacity = 0.5;
     }
   }
 }
 
-window.addEventListener('scroll', delay_scrolled);
+window.addEventListener('scroll', simple_delay_scrolled);
