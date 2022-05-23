@@ -1,8 +1,10 @@
-console.log("Estoy Vivo");
+console.log("Estoy Vivo")
 
 //const
 const key_press_route = "../source/sounds/key_press.mp3";
+const percent_scroll = 0.25; // porcentaje de scroll 
 
+// key press efect
 function key_press() {
   const key_press_effect = new Audio(key_press_route);
   key_press_effect.preload = "auto";
@@ -18,4 +20,27 @@ function key_press2() {
   MediaStreamAudioSourceNode.pause();
 }
 
+window.onscroll = function() {
+  var distanceScrolled = document.documentElement.scrollTop;
+  console.log('Scrolled: ' + distanceScrolled);
+}
 
+// delay scroll
+
+let delay_scroll = document.querySelectorAll(".delay_scroll");
+
+function delay_scrolled() {
+  let scrollTop = document.documentElement.scrollTop;
+
+  for (var i=0; i<delay_scroll.length ; i++ ){
+    let e = delay_scroll[i];
+    let eheight = e.offsetTop;
+    if(eheight - 200 < scrollTop) {
+      e.style.opacity = 1;
+    } else {
+      e.style.opacity = 0.5;
+    }
+  }
+}
+
+window.addEventListener('scroll', delay_scrolled);

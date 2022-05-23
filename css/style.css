@@ -17,6 +17,11 @@
   /*--font-family: Avenir;*/
 }
 
+/* Quitar barra de navegacion*/
+::-webkit-scrollbar {
+  display: none;
+  }
+
 body {
   margin: 0;
   padding: 0;
@@ -27,12 +32,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap; /* se acomoda en una segunda fila */
 }
 
 #fondo {
   width: 100%;
   height: 100vh;
-  background-image: url("../source/84366.jpg");
+  background-image: url("../source/backgrounds/83960.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -41,6 +47,11 @@ body {
 #fondo p {
   color: white;
   font-size: 25vh;
+}
+
+.delay_scroll {
+  opacity: 0;
+  transition: all 0.5s;
 }
 
 .section {
@@ -52,7 +63,7 @@ body {
 
   height: 100vh;
   width: auto;
-  background-image: url("../source/backgrounds/83960.jpg");
+  background-image: url("../source/backgrounds/1117926.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -97,3 +108,4 @@ body {
     border-color: transparent;
   }
 }
+
