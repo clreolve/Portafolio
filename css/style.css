@@ -28,11 +28,34 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+h2 {
+  font-size: 8vh;
+}
+
+p {
+  font-size: 3vh;
+}
+
 .flex_center {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; /* se acomoda en una segunda fila */
+}
+
+#wrapper {
+  display: block;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 0;
+
+  height: 100vh;
+  width: auto;
+
+  /*background-image: url("../source/backgrounds/1117926.jpg");*/
+
+  background-image: url("../source/backgrounds/1117926.jpg") repeat-x 50%,  url("../source/backgrounds/83960.jpg") repeat-x 70%,  url("../source/backgrounds/1117926.jpg") repeat-x 120%,  no-repeat;
 }
 
 #fondo {
@@ -74,7 +97,7 @@ body {
 .section .box {
   position: relative;
   max-width: 600px;
-  padding: 50px;
+  padding: 40px;
   background: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
