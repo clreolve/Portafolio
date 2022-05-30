@@ -1,107 +1,75 @@
-:root {
-  /* propiedades default */
-  --background: white;
-  --primary: #c4ddff;
-  --secondary: #7fb5ff;
+@import url(./reset.css);
 
-  /* message colors */
-  --alert: yellow;
-  --correct: green;
-
-  /* button colors */
-
-  /*--font-base: */
-  --font-size: 1em;
-  --font-color: black;
-  --font-disable-color: darkgrey;
-  /*--font-family: Avenir;*/
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifs;
 }
-
-/* Quitar barra de navegacion*/
-::-webkit-scrollbar {
-  display: none;
-  }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-h2 {
-  font-size: 8vh;
-}
-
-p {
-  font-size: 3vh;
-}
-
-.flex_center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; /* se acomoda en una segunda fila */
-}
-
-#wrapper {
-  display: block;
-  justify-content: center;
-  align-items: center;
-
-  padding: 0 0;
-
-  height: 100vh;
-  width: auto;
-
-  /*background-image: url("../source/backgrounds/1117926.jpg");*/
-
-  background-image: url("../source/backgrounds/1117926.jpg") repeat-x 50%,  url("../source/backgrounds/83960.jpg") repeat-x 70%,  url("../source/backgrounds/1117926.jpg") repeat-x 120%,  no-repeat;
-}
-
-#fondo {
   width: 100%;
   height: 100vh;
-  background-image: url("../source/backgrounds/83960.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
 
-#fondo p {
-  color: white;
-  font-size: 25vh;
-}
-
-.delay_scroll {
-  opacity: 0;
-  transition: all 0.5s;
-}
-
-.section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 0 0;
-
-  height: 100vh;
-  width: auto;
+  /*background*/
   background-image: url("../source/backgrounds/1117926.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 
-  padding: 0 100px;
+  max-width: 100%;
+  overflow-x: hidden;
+
+  display: block;
 }
 
-.section .box {
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* propiedades del texto */
+h1 {
+  font-size: calc(25px + 0.5rem);
+}
+
+h2 {
+  font-size: calc(20px + 0.25rem);
+}
+
+h3 {
+  font-size: calc(18px + 0.25rem);
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+/* bloques */
+section {
+  align-items: center;
+  padding: 3vh;
+  min-height: 100vh;
+
+  display: table;
+}
+
+section .section-content {
+  display: table-cell;
+   vertical-align: middle;
+}
+
+.box {
   position: relative;
-  max-width: 600px;
+  /*max-width: 600px;*/
   padding: 40px;
+  margin: 10px;
   background: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* Hello section */
+#hello {
+  margin: 0 auto;
+}
 .type_machine_text {
   /*
   width: [numero de caracteres]ch
@@ -112,12 +80,23 @@ p {
   font-family: monospace;
   display: block;
   white-space: nowrap;
-  border-right: 4px solid;
-  width: 4ch;
+  border-right: 5px solid;
+  width: 5ch;
+
+  font-size: 10vh;
 
   animation: typing 2s steps(4),
    blink 0.5s infinite step-end alternate;
   overflow: hidden;
+
+  color: white;
+  
+}
+
+.hello_name{
+  font-size: 5vh;
+  margin: auto auto;
+  color: white;
 }
 
 @keyframes typing {
@@ -131,4 +110,3 @@ p {
     border-color: transparent;
   }
 }
-
