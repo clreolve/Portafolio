@@ -55,15 +55,16 @@ p {
 /* bloques */
 section {
   align-items: center;
-  padding: 3vh;
   min-height: 100vh;
-  min-width: 100vh;
+  min-width: 100vw;
+  margin: 0 auto;
   display: table;
 }
 
 section .section-content {
+  padding: 3vh;
   display: table-cell;
-   vertical-align: middle;
+  vertical-align: middle;
 }
 
 .box {
@@ -77,7 +78,21 @@ section .section-content {
 
 /* Hello section */
 #hello {
+  --font-color: white;
   margin: 0 auto;
+  font-family: monospace;
+}
+
+#hello .section-content{
+  padding: 2vh 3vw;
+}
+
+#hello .section-content a div{
+  width: 45px;
+  height: 45px;
+  margin: 10px auto;
+  border: 2px solid#A63333;
+  background-color: white;
 }
 .type_machine_text {
   /*
@@ -96,9 +111,8 @@ section .section-content {
   overflow: hidden;
 
   /* font */
-  font-family: monospace;
   font-size: max(20vw, 40px, 20vw);
-  color: white;
+  color: var(--font-color);
   /*text-shadow: 4px 4px 8px var(--color1);*/
   margin: 0 auto;
   
@@ -107,9 +121,10 @@ section .section-content {
 .hello_name{
   font-size: max(10vh, 25px);
   margin: auto auto;
-  color: white;
+  color: var(--font-color);
   /*text-shadow: 2px 2px 4px var(--color1);*/
   margin: 0 auto;
+  text-align: left;
 }
 
 @keyframes typing {
@@ -124,12 +139,14 @@ section .section-content {
   }
 }
 
-/* boton */
-a.button {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
+/* Proyects section */
+#proyects {
+  /*Variables*/
+  --background-color: #A63333;
+  --box-color: white;
 
-  text-decoration: none;
-  color: initial;
+  background-color: var(--background-color);
+
 }
+
+
