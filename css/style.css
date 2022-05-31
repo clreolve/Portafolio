@@ -79,6 +79,7 @@ section .section-content {
 /* Hello section */
 #hello {
   --font-color: white;
+  --size-more-button : min(5vh, 5vw);
   margin: 0 auto;
   font-family: monospace;
 }
@@ -87,13 +88,24 @@ section .section-content {
   padding: 2vh 3vw;
 }
 
-#hello .section-content a div{
-  width: 45px;
-  height: 45px;
-  margin: 10px auto;
-  border: 2px solid#A63333;
+#hello .section-content div {
+  height: var(--size-more-button);
+  width: var(--size-more-button);
   background-color: white;
+  border: 2px solid black;
+  margin: 2vh auto;
+  border-radius: 20%;
+
+  position: fixed;
+  bottom: 5vh;
+  right: 50vw;
 }
+
+#hello .section-content div a img {
+  width: var(--size-more-button);
+  height: var(--size-more-button);
+}
+
 .type_machine_text {
   /*
   width: [numero de caracteres]ch
