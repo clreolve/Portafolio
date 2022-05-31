@@ -5,6 +5,14 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifs;
 }
 
+:root {
+  --color-dominant : #6A7329;
+  --color-enfasis-1 : #A63333;
+  --color-enfasis-2: #260101;
+  --color-light-1 : #BF8450;
+  --color-light-0 : #F2CA99;
+}
+
 body {
   width: 100%;
   height: 100vh;
@@ -15,6 +23,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  
 
   max-width: 100%;
   overflow-x: hidden;
@@ -48,7 +57,7 @@ section {
   align-items: center;
   padding: 3vh;
   min-height: 100vh;
-
+  min-width: 100vh;
   display: table;
 }
 
@@ -77,26 +86,30 @@ section .section-content {
    blink 0.5s infinite step-end alternate;
   overflow: hidden;
   */
-  font-family: monospace;
   display: block;
   white-space: nowrap;
   border-right: 5px solid;
   width: 5ch;
 
-  font-size: 10vh;
-
-  animation: typing 2s steps(4),
+  animation: typing 2s steps(5),
    blink 0.5s infinite step-end alternate;
   overflow: hidden;
 
+  /* font */
+  font-family: monospace;
+  font-size: max(20vw, 40px, 20vw);
   color: white;
+  /*text-shadow: 4px 4px 8px var(--color1);*/
+  margin: 0 auto;
   
 }
 
 .hello_name{
-  font-size: 5vh;
+  font-size: max(10vh, 25px);
   margin: auto auto;
   color: white;
+  /*text-shadow: 2px 2px 4px var(--color1);*/
+  margin: 0 auto;
 }
 
 @keyframes typing {
@@ -109,4 +122,14 @@ section .section-content {
   50% {
     border-color: transparent;
   }
+}
+
+/* boton */
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  text-decoration: none;
+  color: initial;
 }
