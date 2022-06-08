@@ -57,14 +57,19 @@ section {
   align-items: center;
   min-height: 100vh;
   min-width: 100vw;
+
+  /*
   margin: 0 auto;
   display: table;
+  */
 }
 
 section .section-content {
-  padding: 3vh;
+  padding: max(10vw, 50px);
+  /*
   display: table-cell;
   vertical-align: middle;
+  */
 }
 
 .box {
@@ -78,14 +83,27 @@ section .section-content {
 
 /* Hello section */
 #hello {
+  --more-button-color: var(--color-enfasis-1);
   --font-color: white;
   --size-more-button : min(5vh, 5vw);
+
+  --size-hello: max(min(25vw, 25vh), 70px);
+  --size-name: max(min(5vh, 5vw), 40px);
   margin: 0 auto;
   font-family: monospace;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)); /*Fondo oscuro*/
 }
 
 #hello .section-content{
-  padding: 2vh 3vw;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-content: center;
+  align-items: flex-start;
+
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
 }
 
 #hello .section-content div {
@@ -96,14 +114,25 @@ section .section-content {
   margin: 2vh auto;
   border-radius: 20%;
 
-  position: fixed;
+  position: absolute;
   bottom: 5vh;
   right: 50vw;
+}
+
+#hello .section-content div:hover {
+  background-color: var(--more-button-color);
+  height: calc(var(--size-more-button)*2);
+  width: calc(var(--size-more-button)*2);
 }
 
 #hello .section-content div a img {
   width: var(--size-more-button);
   height: var(--size-more-button);
+}
+
+#hello .section-content div a img {
+  width: 100%;
+  height: 100%;
 }
 
 .type_machine_text {
@@ -123,7 +152,7 @@ section .section-content {
   overflow: hidden;
 
   /* font */
-  font-size: max(20vw, 40px, 20vw);
+  font-size: var(--size-hello);
   color: var(--font-color);
   /*text-shadow: 4px 4px 8px var(--color1);*/
   margin: 0 auto;
@@ -131,11 +160,11 @@ section .section-content {
 }
 
 .hello_name{
-  font-size: max(10vh, 25px);
+  font-size: var(--size-name);
   margin: auto auto;
   color: var(--font-color);
   /*text-shadow: 2px 2px 4px var(--color1);*/
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   text-align: left;
 }
 
@@ -154,7 +183,7 @@ section .section-content {
 /* Proyects section */
 #proyects {
   /*Variables*/
-  --background-color: #A63333;
+  --background-color: var(--color-enfasis-1);
   --box-color: white;
 
   background-color: var(--background-color);
