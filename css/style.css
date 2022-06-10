@@ -66,10 +66,39 @@ section {
 
 section .section-content {
   padding: max(10vw, 50px);
+
+  /* Flex */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
   /*
   display: table-cell;
   vertical-align: middle;
   */
+}
+
+.resizable-colums {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+}
+
+.half-col {
+  width: 49%;
+}
+
+.third-col {
+  width: 32%;
+}
+
+.full-col {
+  width: 100%;
 }
 
 .box {
@@ -95,15 +124,9 @@ section .section-content {
 }
 
 #hello .section-content{
-  display: flex;
-  justify-content: space-around;
   flex-direction: column;
   align-content: center;
-  align-items: flex-start;
-
-  flex-wrap: wrap;
-  column-gap: 0.5rem;
-  row-gap: 0.5rem;
+  height: 100%;
 }
 
 #hello .section-content div {
@@ -111,28 +134,26 @@ section .section-content {
   width: var(--size-more-button);
   background-color: white;
   border: 2px solid black;
-  margin: 2vh auto;
-  border-radius: 20%;
 
   position: absolute;
   bottom: 5vh;
+  border-radius: 20%;
+  /*
+  margin: 2vh auto;
+  bottom: 5vh;
   right: 50vw;
-}
-
-#hello .section-content div:hover {
-  background-color: var(--more-button-color);
-  height: calc(var(--size-more-button)*2);
-  width: calc(var(--size-more-button)*2);
-}
-
-#hello .section-content div a img {
-  width: var(--size-more-button);
-  height: var(--size-more-button);
+  */
 }
 
 #hello .section-content div a img {
   width: 100%;
-  height: 100%;
+  height: auto;
+}
+
+#hello .section-content div:hover {
+  background-color: var(--more-button-color);
+  width: calc(var(--size-more-button)*2);
+  height:calc(var(--size-more-button)*2);;
 }
 
 .type_machine_text {
@@ -187,7 +208,7 @@ section .section-content {
   --box-color: white;
 
   background-color: var(--background-color);
-
+  background: linear-gradient(white, var(--background-color));
 }
 
 
