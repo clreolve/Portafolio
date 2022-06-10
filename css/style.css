@@ -346,6 +346,10 @@ section .section-content {
     padding: max(10vw, 10px);
   }
 
+  #hello {
+    --size-more-button: min(20vh, 20vw);
+  }
+
   #proyects-box {
     flex-direction: column;
     
