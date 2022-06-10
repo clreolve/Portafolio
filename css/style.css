@@ -64,7 +64,7 @@ section {
 }
 
 section .section-content {
-  padding: 3vw max(10vw, 10px);
+  padding: 3vw max(20vw, 10px);
   /* Flex */
   display: flex;
   justify-content: flex-start;
@@ -242,7 +242,7 @@ section .section-content {
   row-gap: 0.5rem;
 
   width: 30%;
-  min-height: 80vh;
+  height: 80vh;
   /*
   padding: 40px;
   margin: 10px;
@@ -254,22 +254,23 @@ section .section-content {
   background-color: white;
 }
 
-#proyects-box > .proyect > .img-container {
+.img-container {
   /*display: flex;
   justify-content: center;
   align-items: center;
   overflow: unset;*/
 
-  height: 60%;
+  background-color: aquamarine;
+  height: 65%;
   width: 90%;
 }
 
-.img-container > .platform {
+.proyect > .platform {
   width: 50%;
-  height: 40%;
+  height: 10%;
   border: 2px solid black;
   background-color: white;
-  padding: 1vw 1vh;
+  /*padding: 1vw 1vh;*/
   position: relative;
   margin-top: -10%;
   left: 20%;

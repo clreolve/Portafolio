@@ -1,1 +1,0 @@
-//document.documentElement.style.setproperty('--nombreVariable', 'valor');
