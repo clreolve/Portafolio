@@ -242,7 +242,7 @@ section .section-content {
   row-gap: 0.5rem;
 
   width: 30%;
-  height: 80vh;
+  min-height: 80vh;
   /*
   padding: 40px;
   margin: 10px;
@@ -251,7 +251,7 @@ section .section-content {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
   margin: 0 6px 18px;
 
-  background-color: yellow;
+  background-color: white;
 
   
 }
@@ -262,16 +262,33 @@ section .section-content {
   align-items: center;
   overflow: unset;*/
 
-  height: 75%;
+  height: 60%;
   width: 90%;
-  background-color: green;
+}
+
+.img-container >  .platform {
+  width: 50%;
+  height: 40%;
+  border: 2px solid black;
+  background-color: white;
+  padding: 1vw 1vh;
+  position: relative;
+  margin-top: -10%;
+  left: 20%;
+  text-align: center;
+}
+
+
+.proyect > .title {
+  font-style: oblique;
 }
 
 .img-container > img {
-  height: 100%;
-  width: 100%;
+  width:100%;
+  height:100%;
   object-fit: cover;
   overflow: hidden;
+  
   /*
   min-width: 100%;
   min-height: 100%;
