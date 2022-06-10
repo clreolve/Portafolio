@@ -1,20 +1,20 @@
 @import url(./reset.css);
 
-* {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifs;
-}
-
 :root {
-  --color-dominant : #6A7329;
-  --color-enfasis-1 : #A63333;
+  --color-enfasis-1: #a63333;
   --color-enfasis-2: #260101;
-  --color-light-1 : #BF8450;
-  --color-light-0 : #F2CA99;
+  --color-enfasis-3: #6a7329;
+  --color-enfasis-: #6a7329;
+  --color-light-1: #bf8450;
+  --color-light-0: #f2ca99;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
   width: 100%;
+  min-width: 400px;
   height: 100vh;
 
   /*background*/
@@ -23,7 +23,6 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  
 
   max-width: 100%;
   overflow-x: hidden;
@@ -37,11 +36,11 @@ body {
 
 /* propiedades del texto */
 h1 {
-  font-size: calc(25px + 0.5rem);
+  font-size: max(6vh, 40px);
 }
 
 h2 {
-  font-size: calc(20px + 0.25rem);
+  font-size: max(4vh);
 }
 
 h3 {
@@ -65,11 +64,10 @@ section {
 }
 
 section .section-content {
-  padding: max(10vw, 50px);
-
+  padding: 3vh max(10vw, 10px);
   /* Flex */
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
@@ -114,19 +112,22 @@ section .section-content {
 #hello {
   --more-button-color: var(--color-enfasis-1);
   --font-color: white;
-  --size-more-button : min(5vh, 5vw);
+  --size-more-button: min(5vh, 5vw);
 
   --size-hello: max(min(25vw, 25vh), 70px);
   --size-name: max(min(5vh, 5vw), 40px);
   margin: 0 auto;
   font-family: monospace;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)); /*Fondo oscuro*/
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.8)
+  ); /*Fondo oscuro*/
 }
 
-#hello .section-content{
+#hello .section-content {
   flex-direction: column;
-  align-content: center;
-  height: 100%;
+  align-content: flex-start;
+  min-height: 100%;
 }
 
 #hello .section-content div {
@@ -152,8 +153,8 @@ section .section-content {
 
 #hello .section-content div:hover {
   background-color: var(--more-button-color);
-  width: calc(var(--size-more-button)*2);
-  height:calc(var(--size-more-button)*2);;
+  width: calc(var(--size-more-button) * 2);
+  height: calc(var(--size-more-button) * 2);
 }
 
 .type_machine_text {
@@ -168,8 +169,7 @@ section .section-content {
   border-right: 5px solid;
   width: 5ch;
 
-  animation: typing 2s steps(5),
-   blink 0.5s infinite step-end alternate;
+  animation: typing 2s steps(5), blink 0.5s infinite step-end alternate;
   overflow: hidden;
 
   /* font */
@@ -177,10 +177,9 @@ section .section-content {
   color: var(--font-color);
   /*text-shadow: 4px 4px 8px var(--color1);*/
   margin: 0 auto;
-  
 }
 
-.hello_name{
+.hello_name {
   font-size: var(--size-name);
   margin: auto auto;
   color: var(--font-color);
@@ -208,7 +207,102 @@ section .section-content {
   --box-color: white;
 
   background-color: var(--background-color);
-  background: linear-gradient(white, var(--background-color));
 }
 
+#proyects .section-content {
+}
 
+#proyects .section-content h1 {
+  width: 100%;
+  text-align: center;
+  padding: 2vh;
+}
+
+#proyects-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+
+  width: 100%;
+}
+
+#proyects-box > .proyect {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+
+  width: 30%;
+  height: 80vh;
+  /*
+  padding: 40px;
+  margin: 10px;
+  */
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
+  margin: 0 6px 18px;
+
+  background-color: yellow;
+
+  
+}
+
+#proyects-box > .proyect > .img-container {
+  /*display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: unset;*/
+
+  height: 75%;
+  width: 90%;
+  background-color: green;
+}
+
+.img-container > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  /*
+  min-width: 100%;
+  min-height: 100%;
+
+  
+  */
+}
+
+/*Sobre mi*/
+#personal-information {
+  /*background-image: url("../source/backgrounds/1117926.jpg");*/
+  background-color: var(--color-enfasis-3);
+}
+
+#personal-information .section-content {
+}
+
+/* Skills */
+#skills {
+}
+
+#skills .section-content {
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  #proyects-box {
+    flex-direction: column;
+  }
+
+  #proyects-box div {
+    width: 100%;
+  }
+}
