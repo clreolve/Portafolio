@@ -311,6 +311,23 @@ section .section-content {
 #personal-information {
   /*background-image: url("../source/backgrounds/1117926.jpg");*/
   background-color: var(--color-enfasis-3);
+
+}
+
+#personal-information > .section-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+}
+
+#personal-information > .section-content > h1 {
+  color: white;
+  text-align: center;
 }
 
 #personal-information .section-content {
@@ -331,6 +348,7 @@ section .section-content {
 
   #proyects-box {
     flex-direction: column;
+    
   }
 
   #proyects-box .proyect {
