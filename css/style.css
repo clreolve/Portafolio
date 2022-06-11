@@ -66,17 +66,32 @@ section {
 section .section-content {
   padding: 3vw max(20vw, 10px);
   /* Flex */
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  column-gap: 0.5rem;
-  row-gap: 0.5rem;
   /*
   display: table-cell;
   vertical-align: middle;
   */
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+}
+
+.flex-col , .section-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
 }
 
 .resizable-colums {
@@ -125,7 +140,6 @@ section .section-content {
 }
 
 #hello .section-content {
-  flex-direction: column;
   align-content: flex-start;
   min-height: 100%;
 }
@@ -219,27 +233,13 @@ section .section-content {
 }
 
 #proyects-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  column-gap: 0.5rem;
-  row-gap: 0.5rem;
+  
 
   width: 100%;
 }
 
 #proyects-box > .proyect {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  column-gap: 0.5rem;
-  row-gap: 0.5rem;
+  
 
   width: 30%;
   height: 80vh;
@@ -310,19 +310,12 @@ section .section-content {
 /*Sobre mi*/
 #personal-information {
   /*background-image: url("../source/backgrounds/1117926.jpg");*/
-  background-color: var(--color-enfasis-3);
+  background-color:  #6a7329 30%;
 
 }
 
 #personal-information > .section-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  column-gap: 0.5rem;
-  row-gap: 0.5rem;
+  
 }
 
 #personal-information > .section-content > h1 {
