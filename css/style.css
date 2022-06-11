@@ -138,7 +138,6 @@ section .section-content {
 
 /* Hello section */
 #hello {
-  --more-button-color: var(--color-enfasis-1);
   --font-color: white;
   --size-more-button: min(5vh, 5vw);
 
@@ -173,16 +172,18 @@ section .section-content {
   */
 }
 
+#hello .section-content div:hover {
+  background-color: var(--orange);
+  width: calc(var(--size-more-button) * 2);
+  height: calc(var(--size-more-button) * 2);
+}
+
 #hello .section-content div a img {
   width: 100%;
   height: auto;
 }
 
-#hello .section-content div:hover {
-  background-color: var(--more-button-color);
-  width: calc(var(--size-more-button) * 2);
-  height: calc(var(--size-more-button) * 2);
-}
+
 
 .type_machine_text {
   /*
@@ -291,15 +292,6 @@ section .section-content {
   align-items: center;
 
   position: relative;
-  /*background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-
-  max-width: 100%;
-  overflow-x: hidden;
-
-  display: block;*/
 }
 
 .img-container > .platform {
@@ -322,30 +314,27 @@ section .section-content {
   font-weight: bold;
 }
 
-/*Sobre mi*/
-#personal-information {
-  /*background-image: url("../source/backgrounds/1117926.jpg");*/
-  background-color:  var(--sea-dark);
-
-}
-
-#personal-information > .section-content {
-  
-}
-
-#personal-information > .section-content > h1 {
-  color: white;
-  text-align: center;
-}
-
-#personal-information .section-content {
-}
-
 /* Skills */
 #skills {
+  background-image: url(../source/backgrounds/Great_Wave_off_Kanagawa.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  max-width: 100%;
+  overflow-x: hidden;
+
+  display: block;
 }
 
 #skills .section-content {
+}
+
+/* contact me*/
+
+#contact {
+  background-color: var(--nippon-paper);
 }
 
 /* Responsive */
