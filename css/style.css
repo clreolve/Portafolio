@@ -8,18 +8,17 @@
 #F2B705
 #F29F05
 */
-
-  --blue-dark-dark : #00020D;
-  --blue-dark : #010D26;
+  --blue-dark-dark: #00020d;
+  --blue-dark: #010d26;
   --blue: #011640;
-  --orange: #F29F05;
-  --yellow: #F2B705;
+  --orange: #f29f05;
+  --yellow: #f2b705;
 
-  --sea-dark: #1A2040;
-  --sea-green: #2F5973;
-  --sea-turquoise: #77A699;
-  --nippon-paper: #D9D3B4;
-  --brown: #BF9663;
+  --sea-dark: #1a2040;
+  --sea-green: #2f5973;
+  --sea-turquoise: #77a699;
+  --nippon-paper: #d9d3b4;
+  --brown: #bf9663;
 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -76,8 +75,8 @@ section {
   */
 }
 
-section .section-content {
-  padding: 3vw max(20vw, 10px);
+.section-content {
+  padding: 3vh max(12vw, 10px);
   /* Flex */
   /*
   display: table-cell;
@@ -96,7 +95,8 @@ section .section-content {
   row-gap: 0.5rem;
 }
 
-.flex-col , .section-content{
+.flex-col,
+.section-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -183,8 +183,6 @@ section .section-content {
   height: auto;
 }
 
-
-
 .type_machine_text {
   /*
   width: [numero de caracteres]ch
@@ -247,14 +245,10 @@ section .section-content {
 }
 
 #proyects-box {
-  
-
   width: 100%;
 }
 
 #proyects-box > .proyect {
-  
-
   width: 30%;
   height: 80vh;
   padding: 0 0.5%;
@@ -271,8 +265,6 @@ section .section-content {
   padding: 1%;
   font-size: 3vh;
 }
-
-
 
 .img-container {
   height: 65%;
@@ -306,11 +298,10 @@ section .section-content {
   left: 0;
   right: 0;
   margin: 0 auto;
-  
 }
 
 .proyect > .title {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
 }
 
@@ -324,17 +315,36 @@ section .section-content {
 
   max-width: 100%;
   overflow-x: hidden;
-
-  display: block;
 }
 
-#skills .section-content {
+#skills .section-content > h1 {
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.skill {
+  box-sizing: border-box;
+  width: 32%;
+  padding: 2vh 2vw;
+  aspect-ratio: 1/1;
+
+  text-align: center;
+  text-justify: auto;
+  color: white;
+
+  border: 2px solid black;
+  background-color: var(--sea-dark);
+}
+
+.skill-title {
+  font-size: 30px;
 }
 
 /* contact me*/
 
 #contact {
-  background-color: var(--nippon-paper);
+  background-color: var(--sea-turquoise);
 }
 
 /* Responsive */
@@ -349,10 +359,18 @@ section .section-content {
 
   #proyects-box {
     flex-direction: column;
-    
   }
 
   #proyects-box .proyect {
-    width: 100%;
+    width: 60%;
+  }
+
+  #skills {
+    flex-direction: column;
+  }
+
+  .skill {
+    width: 60%;
+    aspect-ratio: unset;
   }
 }
