@@ -1,13 +1,6 @@
 @import url(./reset.css);
 
 :root {
-  /*
-  
-#011640
-#010D26
-#F2B705
-#F29F05
-*/
   --blue-dark-dark: #00020d;
   --blue-dark: #010d26;
   --blue: #011640;
@@ -68,20 +61,11 @@ section {
   align-items: center;
   min-height: 100vh;
   min-width: 100vw;
-
-  /*
-  margin: 0 auto;
-  display: table;
-  */
 }
 
 .section-content {
   padding: 3vh max(12vw, 10px);
-  /* Flex */
-  /*
-  display: table-cell;
-  vertical-align: middle;
-  */
+
 }
 
 .flex-row {
@@ -165,11 +149,6 @@ section {
   position: absolute;
   bottom: 5vh;
   border-radius: 20%;
-  /*
-  margin: 2vh auto;
-  bottom: 5vh;
-  right: 50vw;
-  */
 }
 
 #hello .section-content div:hover {
@@ -184,12 +163,6 @@ section {
 }
 
 .type_machine_text {
-  /*
-  width: [numero de caracteres]ch
-  animation: typing 2s steps([numero de caracteres]),
-   blink 0.5s infinite step-end alternate;
-  overflow: hidden;
-  */
   display: block;
   white-space: nowrap;
   border-right: 5px solid;
@@ -201,7 +174,6 @@ section {
   /* font */
   font-size: var(--size-hello);
   color: var(--font-color);
-  /*text-shadow: 4px 4px 8px var(--color1);*/
   margin: 0 auto;
 }
 
@@ -209,8 +181,6 @@ section {
   font-size: var(--size-name);
   margin: auto auto;
   color: var(--font-color);
-  /*text-shadow: 2px 2px 4px var(--color1);*/
-  /*margin: 0 auto;*/
   text-align: left;
 }
 
@@ -317,28 +287,60 @@ section {
   overflow-x: hidden;
 }
 
-#skills .section-content > h1 {
-  padding: 5px;
+#skills > .section-content > h1 {
   color: white;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .skill {
   box-sizing: border-box;
+  flex-direction: column;
+  flex-wrap: nowrap;
   width: 32%;
   padding: 2vh 2vw;
   aspect-ratio: 1/1;
 
   text-align: center;
   text-justify: auto;
-  color: white;
 
   border: 2px solid black;
   background-color: var(--sea-dark);
 }
 
 .skill-title {
-  font-size: 30px;
+  font-size: max(3vw, 3vh);
+  color: red;
+  padding: 10px;
+}
+
+.skill-description {
+  font-size: max(2vw, 2vh);
+  color: white;
+  margin: auto 0;
+}
+
+ul.skill-description {
+  list-style: none;
+}
+
+ul.skill-description li::before {
+  content: "\2022";
+  color: red;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  padding: 10px;
+}
+
+table.skill-description {
+  border-collapse: collapse;
+  border-style: hidden;
+}
+table.skill-description td,
+table.skill-description th {
+  border: 1px solid white;
+  padding: 10px;
 }
 
 /* contact me*/
@@ -347,30 +349,110 @@ section {
   background-color: var(--sea-turquoise);
 }
 
+#contact > h1 {
+  color: black;
+}
+
+#social-bar {
+  width: 40%;
+}
+
+#social-bar > img {
+  aspect-ratio: 1/1;
+  width: 10%;
+}
+
+#contact form {
+  width: 100%;
+}
+
+#contact a {
+  color: black;
+}
+
+#contact a:hover {
+  color: white;
+}
+
+#form-contact,
+#form-contact > ul {
+  width: 50%;
+}
+
+#form-contact > ul > li,
+#form-contact > ul > li > * {
+  width: 100%;
+  padding: 5px 10px;
+
+  box-sizing: border-box;
+}
+
+#form-contact > ul > li > *:focus {
+  outline: none;
+  border: 1px solid red;
+}
+
+#form-contact input[type="submit"] {
+  background-color: black;
+  color: white;
+  position: relative;
+  padding: 5px;
+  width: 50%;
+  align-items: center;
+}
+
+
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   section .section-content {
     padding: max(10vw, 10px);
   }
 
   #hello {
-    --size-more-button: min(20vh, 20vw);
+    --size-more-button: min(10vh, 10vw);
   }
 
-  #proyects-box {
-    flex-direction: column;
+  #proyects-box,
+  #skills {
+    flex-direction: row;
   }
 
-  #proyects-box .proyect {
-    width: 60%;
+  #proyects-box > .proyect,
+  .skill {
+    width: 40%;
   }
 
+  #form-contact,
+  #form-contact > ul{
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  section .section-content {
+    padding: 20px;
+  }
+
+  #proyects-box,
   #skills {
     flex-direction: column;
   }
 
+  #proyects-box > .proyect,
   .skill {
-    width: 60%;
+    width: 80%;
+  }
+
+  .skill {
     aspect-ratio: unset;
+  }
+
+  #social-bar > img {
+    width: 20%;
+  }
+
+  #form-contact,
+  #form-contact > ul{
+    width: 90%;
   }
 }

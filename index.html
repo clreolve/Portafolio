@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hola, Soy Reynaldo</title>
+    <meta name="author" content="Claudio Olvera Espinoza" />
+    <title>Soy Reynaldo</title>
 
     <link
       rel="shortcut icon"
@@ -27,6 +28,14 @@
       <div class="section-content">
         <p class="type_machine_text">Hola;</p>
         <p class="hello_name">Soy Reynaldo Olvera. Desarrollador Web y Movil</p>
+        <!--Audio-->
+        <audio
+          src="https://coderadio-relay-ffm.freecodecamp.org/radio/8010/radio.mp3"
+          preload="none"
+          controls
+        ></audio>
+        <audio src="audio.ogg" autoplay loop></audio>
+        <!---->
         <div>
           <a href="#proyects">
             <img src="./source/images/more_icon.svg" alt="More" />
@@ -97,52 +106,55 @@
           <!-- Skills -->
 
           <div class="skill flex-col">
-            <p class="skill-title">Habilidad</p>
+            <p class="skill-title">Colaboración</p>
+            <p class="skill-description">Experiencia en equipos de trabajo</p>
+          </div>
+
+          <div class="skill flex-col">
+            <p class="skill-title">Frontend</p>
+            <ul class="skill-description">
+              <li>Angular</li>
+              <li>React</li>
+              <li>Blade</li>
+            </ul>
+          </div>
+
+          <div class="skill flex-col">
+            <p class="skill-title">Backend</p>
+            <table class="skill-description">
+              <tr>
+                <td>Laravel</td>
+                <td>Django</td>
+              </tr>
+              <tr>
+                <td>Flask</td>
+                <td>NodeJs</td>
+              </tr>
+              <tr>
+                <td>CodeIgniter</td>
+                <td>Rest APIs</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="skill flex-col">
+            <p class="skill-title">DataBases</p>
             <p class="skill-description">
-              Descripcion de las Diferentes Habilidades
+              Diseño y manejo de bases de datos SQL y NoSQL
             </p>
           </div>
 
           <div class="skill flex-col">
-            <p class="skill-title">Habilidad</p>
+            <p class="skill-title">Sistemas</p>
             <p class="skill-description">
-              Descripcion de las Diferentes Habilidades Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Suscipit tenetur sapiente,
-              quibusdam iste rem, atque ducimus amet odio nulla, libero ipsa
-              vitae? Earum deserunt quasi hic consequuntur dignissimos? Ducimus,
-              veritatis?
+              Manejo de Servidores basados en linux y Microsoft Windows Server.
             </p>
           </div>
 
           <div class="skill flex-col">
-            <p class="skill-title">Habilidad</p>
+            <p class="skill-title">Scripting</p>
             <p class="skill-description">
-              Descripcion de las Diferentes Habilidades
-            </p>
-          </div>
-
-          <div class="skill flex-col">
-            <p class="skill-title">Habilidad</p>
-            <p class="skill-description">
-              Descripcion de las Diferentes Habilidades
-            </p>
-          </div>
-
-          <div class="skill flex-col">
-            <p class="skill-title">Habilidad</p>
-            <p class="skill-description">
-              Descripcion de las Diferentes Habilidades Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Suscipit tenetur sapiente,
-              quibusdam iste rem, atque ducimus amet odio nulla, libero ipsa
-              vitae? Earum deserunt quasi hic consequuntur dignissimos? Ducimus,
-              veritatis?
-            </p>
-          </div>
-
-          <div class="skill flex-col">
-            <p class="skill-title">Habilidad</p>
-            <p class="skill-description">
-              Descripcion de las Diferentes Habilidades
+              Scripting en Lua, Python, Ruby y Bash
             </p>
           </div>
 
@@ -152,8 +164,98 @@
     </section>
 
     <section id="contact">
-      <div class="section-content">
+      <div class="section-content flex-col">
         <h1>Contactame</h1>
+
+        <div id="social-bar" class="flex-row">
+          <img
+            src="./source/icons/104425_instagram_instagram.svg"
+            alt=""
+            srcset=""
+          />
+
+          <img src="./source/icons/843773_whatsapp.svg" alt="" srcset="" />
+
+          <img
+            src="./source/icons/1181188_facebook_chat_messenger.svg"
+            alt=""
+            srcset=""
+          />
+
+          <img
+            src="./source/icons/104459_twitter_twitter.svg"
+            alt=""
+            srcset=""
+          />
+
+          <img
+            src="./source/icons/104452_linkedin_linkedin.svg"
+            alt=""
+            srcset=""
+          />
+
+          <img
+            src="./source/icons/394189_code_github_repository.svg"
+            alt=""
+            srcset=""
+          />
+        </div>
+
+        <p>
+          <a href="mailto:clreolve@espol.edu.ec"> clreolve@espol.edu.ec</a>
+          | Tel: 7553608
+        </p>
+
+        <form id="form-contact" class="flex-row" action="" method="post">
+          <ul class="flex-col">
+            <li>
+              <input
+                type="text"
+                name="name-form"
+                id="name-form"
+                placeholder="Nombre"
+              />
+            </li>
+            <li>
+              <input
+                type="email"
+                placeholder="Correo"
+                id="email-form"
+                name="email-form"
+              />
+            </li>
+            <li>
+              <input
+                type="text"
+                name="asunto-form"
+                id="asunto-form"
+                placeholder="Asunto"
+              />
+            </li>
+            <li>
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Escribe tu mensaje Aquí.."
+              ></textarea>
+            </li>
+            <li>
+              <input type="submit" id="submit" />
+            </li>
+          </ul>
+        </form>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.023533363315!2d-79.96984318524483!3d-2.144671498436688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d7303bb0133cd%3A0x66c18bd9810f31cb!2sFacultad%20de%20Ingenier%C3%ADa%20en%20Electricidad%20y%20Computaci%C3%B3n%20FIEC%20-%20ESPOL!5e0!3m2!1ses-419!2sec!4v1655444011768!5m2!1ses-419!2sec"
+          width="200"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </section>
 
