@@ -3,3 +3,4 @@ GET https://api.tcgdex.net/v2/es/cards
 
 ### imagen
 GET https://assets.tcgdex.net/es/swsh/swsh10/TG30/high.webp
+

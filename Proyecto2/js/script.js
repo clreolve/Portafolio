@@ -1,15 +1,23 @@
-import {ES, EN} from "./cards.js";
+import { API } from "./api.js";
+const ES = new API("es");
+const EN = new API("en");
 
-let EScards = []
-let ENcards = []
+let EScards = [];
+let ENcards = [];
+let types = [];
+let categories = [];
+let sets = [];
 
-window.onload = () => {
-    ES.getALlCards().then((data) => {
-        EScards = data;
-    }).catch(console.error)
+window.onload = async () => {
+  await load_data();
 
-    EN.getALlCards().then((data) => {
-        ENcards = data;
-    }).catch(console.error)
+};
+
+async function load_data(){
+  EScards = await ES.getAllCards();
+  ENcards = await EN.getAllCards();
+  types = await ES.getTypes();
+  categories = await ES.getCategories();
+  sets = await ES.getSets();
 
 }

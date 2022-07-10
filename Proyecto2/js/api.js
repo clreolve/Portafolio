@@ -3,12 +3,16 @@
  * al html
  */
 
-const default_language = "es";
+import { fetch_json } from "./utility.js";
 
 /**
  * Para manejar las peticiones
  */
 class API {
+  /**
+   * 
+   * @param {String} lang lenguaje de las respuestas
+   */
   constructor(lang) {
     this.lang = lang;
     this.endpoint = `https://api.tcgdex.net/v2/${lang}`;
@@ -27,18 +31,53 @@ class API {
     this.types = this.endpoint + "/types";
   }
 
-  async getALlCards() {
+  /**
+   * @returns arreglo con todas las cartas en el idioma
+   */
+  async getAllCards() {
     try {
-      fetch(this.allcards)
-        .then((response) => response.json())
-        .then((data) => {
-          return data;
-        });
+      return await fetch_json(this.allcards);
+
     } catch (error) {
       console.error(error);
-      return undefined;
+    }
+  }
+
+  async getSeries() {
+    try {
+      return await fetch_json(this.series);
+    } catch (error) {
+      console.error;
+    }
+  }
+
+  async getTypes() {
+    try {
+      let res = await fetch_json(this.types);
+      return res;
+    } catch (error) {
+      console.error;
+    }
+  }
+
+  async getCategories(){
+    try {
+      return await fetch_json(this.categories);
+    } catch (error) {
+      console.error;
+    }
+  }
+
+  async getSets(){
+    try {
+      return await fetch_json(this.sets);
+    } catch (error) {
+      console.error;
     }
   }
 }
 
-export { API, default_language };
+export {
+  API
+}
+
