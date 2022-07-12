@@ -4,3 +4,11 @@ GET https://api.tcgdex.net/v2/es/cards
 ### imagen
 GET https://assets.tcgdex.net/es/swsh/swsh10/TG30/high.webp
 
+### series
+GET https://api.tcgdex.net/v2/es/series
+
+### series en
+GET https://api.tcgdex.net/v2/en/series
+
+### sets
+GET https://api.tcgdex.net/v2/en/sets
