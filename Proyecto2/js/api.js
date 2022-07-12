@@ -35,20 +35,11 @@ class API {
    * @returns arreglo con todas las cartas en el idioma
    */
   async getAllCards() {
-    try {
       return await fetch_json(this.allcards);
-
-    } catch (error) {
-      console.error(error);
-    }
   }
 
   async getSeries() {
-    try {
       return await fetch_json(this.series);
-    } catch (error) {
-      console.error;
-    }
   }
 
   async getTypes() {
@@ -61,19 +52,11 @@ class API {
   }
 
   async getCategories(){
-    try {
       return await fetch_json(this.categories);
-    } catch (error) {
-      console.error;
-    }
   }
 
   async getSets(){
-    try {
       return await fetch_json(this.sets);
-    } catch (error) {
-      console.error;
-    }
   }
 }
 
