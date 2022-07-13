@@ -21,7 +21,7 @@ async function fetch_json(url) {
  * @param {String} quality high|low
  * @param {String} format webp|png|jpg
  */
-async function getImageURL(url, quality = "low", format = "webp") {
+function getImageURL(url, quality = "high", format = "webp") {
   return `${url}/${quality}.${format}`;
 }
-export { fetch_json };
+export { fetch_json, getImageURL };

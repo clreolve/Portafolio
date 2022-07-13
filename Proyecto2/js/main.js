@@ -25,8 +25,6 @@
         return false;
     });
 
-
-    /**
     // Sidebar Toggler
     $('.sidebar-toggler').click(function () {
         $('.sidebar, .content').toggleClass("open");
@@ -40,6 +38,10 @@
             $(this).css("width", $(this).attr("aria-valuenow") + '%');
         });
     }, {offset: '80%'});
+
+
+    /**
+    
 
 
     // Calender
