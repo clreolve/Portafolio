@@ -1,15 +1,19 @@
-
 /**
- * 
- * @param {String} url url del api a consultar 
+ *
+ * @param {String} url url del api a consultar
  * @returns respuesta de la api parseada
  */
 async function fetch_json(url) {
-  let res = await fetch(url);
-  let data = await res.json();
-  //await localStorage.setItem(backup, JSON.stringify(res)) //guardamos un respaldo
-  //return JSON.parse(localStorage.getItem(backup));
-  return data;
+  try {
+    let res = await fetch(url);
+    let data = await res.json();
+    //await localStorage.setItem(backup, JSON.stringify(res)) //guardamos un respaldo
+    //return JSON.parse(localStorage.getItem(backup));
+    return data;
+  } catch (error) {
+    console.error;
+    return undefined;
+  }
 }
 /**
  * Return source of image
@@ -20,6 +24,4 @@ async function fetch_json(url) {
 async function getImageURL(url, quality = "low", format = "webp") {
   return `${url}/${quality}.${format}`;
 }
-export { 
-  fetch_json
-};
+export { fetch_json };

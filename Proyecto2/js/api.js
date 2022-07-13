@@ -10,7 +10,7 @@ import { fetch_json } from "./utility.js";
  */
 class API {
   /**
-   * 
+   *
    * @param {String} lang lenguaje de las respuestas
    */
   constructor(lang) {
@@ -35,11 +35,11 @@ class API {
    * @returns arreglo con todas las cartas en el idioma
    */
   async getAllCards() {
-      return await fetch_json(this.allcards);
+    return await fetch_json(this.allcards);
   }
 
   async getSeries() {
-      return await fetch_json(this.series);
+    return await fetch_json(this.series);
   }
 
   async getTypes() {
@@ -51,16 +51,13 @@ class API {
     }
   }
 
-  async getCategories(){
-      return await fetch_json(this.categories);
+  async getCategories() {
+    return await fetch_json(this.categories);
   }
 
-  async getSets(){
-      return await fetch_json(this.sets);
+  async getSets() {
+    return await fetch_json(this.sets);
   }
 }
 
-export {
-  API
-}
-
+export { API };
