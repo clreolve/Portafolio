@@ -9,7 +9,7 @@ let categories = [];
 let sets = [];
 
 window.onload = async () => {
-  await load_data();
+  //await load_data();
 
 };
 
