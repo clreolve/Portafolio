@@ -9,25 +9,150 @@ let types = [];
 let categories = [];
 let sets = [];
 
-//let last_set = []
+//INFO LAST SET
+
+let ntypes = [];
+let ncategories = [];
+let last_set = [];
+let cards_last_set = [];
 
 window.onload = async () => {
-  await load_data();
-};
-
-async function load_data() {
   EScards = await ES.getAllCards();
   //ENcards = await EN.getAllCards();
   types = await ES.getTypes();
   categories = await ES.getCategories();
   sets = await ES.getSets();
+  types = await ES.getTypes();
 
-  await last_set();
+  last_set = await get_last_set();
+  cards_last_set = await Promise.all(
+    last_set.cards.map(async (card) => {
+      return await ES.getCard(card.id);
+    })
+  );
+
+  await last_set_fill();
+};
+
+async function get_last_set() {
+  let last = sets[sets.length - 1];
+  return await fetch_json(ES.sets + `/${last.id}`);
 }
 
-async function last_set() {
-  let last = await sets[sets.length - 1];
-  const last_set = await fetch_json(ES.sets + `/${last.id}`);
+async function last_set_fill() {
+  cards_last_set.forEach((el) => {
+    ncategories[el.category] =
+      ncategories[el.category] == undefined ? 1 : ncategories[el.category] + 1;
+    try {
+      ntypes[el.types[0]] =
+        ntypes[el.types[0]] == undefined ? 1 : ntypes[el.types[0]] + 1;
+    } catch {
+      /** */
+    }
+  });
+
+  let ntotalcards = last_set.cardCount.total;
+  let npokemons = ncategories["Pokémon"];
+  let ntrainers = ncategories["Entrenador"];
+
+  /** info del nuevo set */
+  document.querySelectorAll(".set_name").forEach((element) => {
+    element.innerHTML = last_set.name;
+  });
+  document.querySelectorAll(".ntotalcards").forEach((element) => {
+    element.innerHTML = ntotalcards;
+  });
+
+  /* Carousel */
+  fill_cards();
+
+  /* donut chart */
+  await donut_chart(last_set, types);
+}
+
+function getRandomColor() {
+  var num=(Math.floor(Math.random()*4)*4).toString(16);
+  var letters = ['0','F',num];
+  var color = '#';
+  
+  for (var i = 0; i < 3; i++ ) {
+      let pos=Math.floor(Math.random() * letters.length);
+      color += letters[pos];
+      letters.splice(pos,1);
+  }
+  
+  //para evitar que se repitan colores 
+  if(colores.includes(color))
+    return getRandomColor();
+  else
+    colores.push(color)
+    
+  var str = "<div style='background-color:"+color+"'><button id='b1'>hola</button></div>"
+  document.getElementById('colores').innerHTML+=str;
+  return color;
+}
+
+async function donut_chart() {
+  var ctx6 = $("#doughnut-chart").get(0).getContext("2d");
+
+  let backgroundColors = [];
+  let alpha = 0.95
+  let data = [];
+  let keys = [];
+
+  for (let n of ntypes) {
+    backgroundColors.push(`"rgba(235, 22, 22, ${alpha})"`);
+    //backgroundColors.push(getRandomColor());
+    alpha-=0.25;
+  }
+
+  for (const [key, value] of Object.entries(ntypes)) {
+    data.push(value);
+    keys.push(key);
+  }
+  console.log(data);
+
+  console.log(ntypes);
+  
+  
+  var myChart6 = new Chart(ctx6, {
+    type: "bar",
+    data: {
+      labels: keys,
+      datasets: [
+        {
+          backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 205, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(201, 203, 207, 0.2)'
+          ],
+          borderWidth: 1,
+          data: data,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+    },
+  });
+}
+
+function fill_cards() {
+  let last_set_all_cards = document.querySelector("#last-set-box-home");
+  last_set_all_cards.innerHTML = "";
 
   let carousel = document.querySelector("#carrousel_items");
   carousel.innerHTML = "";
@@ -51,12 +176,14 @@ async function last_set() {
           ${template}
       </div>
     </div> 
-  </div>`;
+            </div>`;
 
-    if(counter < 3){
+    last_set_all_cards.innerHTML += template;
+
+    if (counter < 3) {
       acumulador += template;
       counter++;
-    }else{
+    } else {
       carousel.innerHTML += `<div class="carousel-item">
         <div class="container-fluid pt-4 px-4">
           <div class="container row m-auto justify-content-center">
@@ -64,7 +191,6 @@ async function last_set() {
           </div>
         </div> 
       </div>`;
-      console.log(carousel.innerHTML);
       acumulador = "";
       counter = 0;
     }
@@ -72,6 +198,4 @@ async function last_set() {
 
   carousel.querySelector(".carousel-item").classList.add("active");
   carousel_mobile.querySelector(".carousel-item").classList.add("active");
-
-  console.log(last_set);
 }

@@ -31,6 +31,10 @@ class API {
     this.types = this.endpoint + "/types";
   }
 
+  async getCard(id){
+    return await fetch_json(this.allcards + `/${id}`);
+  }
+
   /**
    * @returns arreglo con todas las cartas en el idioma
    */

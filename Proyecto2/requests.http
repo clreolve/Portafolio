@@ -1,6 +1,9 @@
 ### todas las cartas en español
 GET https://api.tcgdex.net/v2/es/cards
 
+### carta por id 
+GET  https://api.tcgdex.net/v2/es/cards/swsh10.5-001
+
 ### imagen
 GET https://assets.tcgdex.net/es/swsh/swsh10/TG30/high.webp
 

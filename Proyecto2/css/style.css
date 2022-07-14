@@ -294,7 +294,7 @@
 }
 
 .carousel-control-prev, .carousel-control-next{
-    background-color: var(--primary);
+    /*background-color: var(--primary);*/
     width: max(5vw, 40px);
 }
 

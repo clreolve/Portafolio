@@ -56,9 +56,8 @@
                 </h3>
                 </a>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active">
-                        <i class="fa fa-tachometer-alt me-2"></i>
-                        Home</a>
+                    <a href="index.html" class="nav-item nav-link">
+                        <i class="fa fa-tachometer-alt me-2"></i>Nueva Expansión</a>
                     <a href="./tipos.html" class="nav-item nav-link">
                         <i class="fa fa-dragon"></i>
                         Tipos</a>
@@ -96,14 +95,16 @@
 
             <!-- El contenido va aqui --------------------------------------------------------------------->
 
+            <!--Carousel Start------------------------------->
             <!-- Carrusel -->
             <div class="container-fluid pt-4 px-4 only-desktop-element">
                 <div class="bg-secondary text-center rounded p-4">
 
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h2 class="mb-0">Cartas de la nueva Expansión</h2>
-                        <a href="">Ver Set</a>
-                    </div>
+                    <h1 class="mb-0">
+                        <span class="set_name">[Nombre del Set]</span> y sus <span class="ntotalcards">[numero de cartas total]</span> cartas ya estan aquí !!!
+                    </h1>
+
+                    <a href="#all_cards_set_gallery">Ver Set</a>
 
                     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                         <div class="carousel-inner" id="carrousel_items">
@@ -127,10 +128,10 @@
             <div class="container-fluid pt-4 px-4 only-mobile-element">
                 <div class="bg-secondary text-center rounded p-4">
 
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Cartas Mas nuevas</h6>
-                        <a href="">Ver Set</a>
-                    </div>
+                    <h1 class="mb-0">
+                        <span class="set_name">[Nombre del Set]</span> y sus <span class="ntotalcards">[numero de cartas total]</span> cartas ya estan aquí !!!
+                    </h1>
+                    <a href="#all_cards_set_gallery">Ver Set</a>
 
                     <div id="carousel_mobile" class="carousel slide carousel-fade" data-bs-ride="carousel">
                         <div class="carousel-inner" id="carrousel_items_mobile">
@@ -144,6 +145,18 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
+                    </div>
+                </div>
+            </div>
+            <!--Carousel End -------------------------------->
+
+            <!-- Info del set-->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary text-center rounded p-4">
+
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <h6 class="mb-4">Doughnut Chart</h6>
+                        <canvas id="doughnut-chart" width="557" height="557" style="display: block; box-sizing: border-box; height: 557px; width: 557px;"></canvas>
                     </div>
                 </div>
             </div>
@@ -163,11 +176,10 @@
             
             <!-- Pokemon Cards -->
 
-            <div class="container-fluid pt-4 px-4">
+            <div id="all_cards_set_gallery" class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Cartas Mas nuevas</h6>
-                        <a href="">Ver Set</a>
+                        <h6 class="mb-0">Todas Las cartas</h6>
                     </div>
 
                     <div class="container">
