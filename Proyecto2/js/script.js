@@ -37,7 +37,7 @@ async function last_set() {
   let counter = 0;
   let acumulador = "";
   for (let c of last_set.cards) {
-    let template = `<div class="poke-card-exibition justify-content-center m-0 col-6 col-sm-6 col-md-3 col-xxl-2">
+    let template = `<div class="poke-card-exibition col-6 col-sm-6 col-md-3 col-xxl-2">
                       <img src="${getImageURL(c.image)}" 
                           class="rounded mx-auto d-block" 
                           alt="${c.name}"
@@ -50,9 +50,9 @@ async function last_set() {
       acumulador += template;
       counter++;
     }else{
-      obj2.innerHTML += ` <div class="carousel-item m-0 justify-content-center">
-        <div class="container-fluid justify-content-center m-0 pt-4 px-4">
-          <div class="container row justify-content-center m-0">
+      obj2.innerHTML += ` <div class="carousel-item">
+        <div class="container-fluid pt-4 px-4">
+          <div class="container row m-auto justify-content-center">
               ${acumulador}
           </div>
         </div> 
