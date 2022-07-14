@@ -310,5 +310,9 @@
         display: none;
     }
 
+    .carousel-control-prev, .carousel-control-next{
+        width: 50px;
+    }
+
     
 }
