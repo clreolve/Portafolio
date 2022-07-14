@@ -97,11 +97,11 @@
             <!-- El contenido va aqui --------------------------------------------------------------------->
 
             <!-- Carrusel -->
-            <div class="container-fluid pt-4 px-4">
+            <div class="container-fluid pt-4 px-4 only-desktop-element">
                 <div class="bg-secondary text-center rounded p-4">
 
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Cartas Mas nuevas</h6>
+                        <h2 class="mb-0">Cartas de la nueva Expansión</h2>
                         <a href="">Ver Set</a>
                     </div>
 
@@ -111,11 +111,36 @@
                             <!---->
 
                         </div>
-                        <button class="carousel-control-prev btn-primary" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                        <button class="carousel-control-prev m-0" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next btn-primary" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                        <button class="carousel-control-next m-0" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carrusel Mobile-->
+            <div class="container-fluid pt-4 px-4 only-mobile-element">
+                <div class="bg-secondary text-center rounded p-4">
+
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Cartas Mas nuevas</h6>
+                        <a href="">Ver Set</a>
+                    </div>
+
+                    <div id="carousel_mobile" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="carrousel_items_mobile">
+                            <!---->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel_mobile" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel_mobile" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>

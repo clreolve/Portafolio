@@ -29,41 +29,49 @@ async function last_set() {
   let last = await sets[sets.length - 1];
   const last_set = await fetch_json(ES.sets + `/${last.id}`);
 
-  let obj = document.querySelector("#last-set-box-home");
-  obj.innerHTML = "";
-  let obj2 = document.querySelector("#carrousel_items");
-  obj2.innerHTML = "";
+  let carousel = document.querySelector("#carrousel_items");
+  carousel.innerHTML = "";
+
+  let carousel_mobile = document.querySelector("#carrousel_items_mobile");
+  carousel_mobile.innerHTML = "";
 
   let counter = 0;
   let acumulador = "";
   for (let c of last_set.cards) {
-    let template = `<div class="poke-card-exibition col-6 col-sm-6 col-md-3 col-xxl-2">
+    let template = `<div class="poke-card-exibition col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                       <img src="${getImageURL(c.image)}" 
                           class="rounded mx-auto d-block" 
                           alt="${c.name}"
                           width="100%">
                     </div>`;
 
-    obj.innerHTML += template;
+    carousel_mobile.innerHTML += `<div class="carousel-item">
+    <div class="container-fluid pt-4 px-4">
+      <div class="container row m-auto justify-content-center">
+          ${template}
+      </div>
+    </div> 
+  </div>`;
 
     if(counter < 3){
       acumulador += template;
       counter++;
     }else{
-      obj2.innerHTML += ` <div class="carousel-item">
+      carousel.innerHTML += `<div class="carousel-item">
         <div class="container-fluid pt-4 px-4">
           <div class="container row m-auto justify-content-center">
               ${acumulador}
           </div>
         </div> 
       </div>`;
-      console.log(obj2.innerHTML);
+      console.log(carousel.innerHTML);
       acumulador = "";
       counter = 0;
     }
   }
 
-  obj2.querySelector(".carousel-item").classList.add("active");
+  carousel.querySelector(".carousel-item").classList.add("active");
+  carousel_mobile.querySelector(".carousel-item").classList.add("active");
 
   console.log(last_set);
 }
