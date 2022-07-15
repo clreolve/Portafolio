@@ -24,4 +24,12 @@ async function fetch_json(url) {
 function getImageURL(url, quality = "high", format = "webp") {
   return `${url}/${quality}.${format}`;
 }
-export { fetch_json, getImageURL };
+
+function getParams(param){
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const res = urlParams.get(param)
+  console.log(res);
+}
+
+export { fetch_json, getImageURL, getParams};

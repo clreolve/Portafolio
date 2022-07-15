@@ -1,5 +1,5 @@
 import { API } from "./api.js";
-import { fetch_json, getImageURL } from "./utility.js";
+import { fetch_json, getImageURL, getParams } from "./utility.js";
 const ES = new API("es");
 const EN = new API("en");
 
@@ -59,8 +59,16 @@ async function last_set_fill() {
   document.querySelectorAll(".set_name").forEach((element) => {
     element.innerHTML = last_set.name;
   });
+  
   document.querySelectorAll(".ntotalcards").forEach((element) => {
     element.innerHTML = ntotalcards;
+  });
+  
+  document.querySelectorAll(".fecha_liberacion").forEach((element) => {
+    element.innerHTML = last_set.releaseDate;
+  });
+  document.querySelectorAll(".serie_link").forEach((element) => {
+    element.innerHTML = `<a href="./series.html?serie=${last_set.serie.id}">${last_set.serie.name}</a> `;
   });
 
   /* Carousel */
@@ -70,50 +78,15 @@ async function last_set_fill() {
   await donut_chart(last_set, types);
 }
 
-function getRandomColor() {
-  var num=(Math.floor(Math.random()*4)*4).toString(16);
-  var letters = ['0','F',num];
-  var color = '#';
-  
-  for (var i = 0; i < 3; i++ ) {
-      let pos=Math.floor(Math.random() * letters.length);
-      color += letters[pos];
-      letters.splice(pos,1);
-  }
-  
-  //para evitar que se repitan colores 
-  if(colores.includes(color))
-    return getRandomColor();
-  else
-    colores.push(color)
-    
-  var str = "<div style='background-color:"+color+"'><button id='b1'>hola</button></div>"
-  document.getElementById('colores').innerHTML+=str;
-  return color;
-}
-
 async function donut_chart() {
   var ctx6 = $("#doughnut-chart").get(0).getContext("2d");
-
-  let backgroundColors = [];
-  let alpha = 0.95
   let data = [];
   let keys = [];
-
-  for (let n of ntypes) {
-    backgroundColors.push(`"rgba(235, 22, 22, ${alpha})"`);
-    //backgroundColors.push(getRandomColor());
-    alpha-=0.25;
-  }
 
   for (const [key, value] of Object.entries(ntypes)) {
     data.push(value);
     keys.push(key);
   }
-  console.log(data);
-
-  console.log(ntypes);
-  
   
   var myChart6 = new Chart(ctx6, {
     type: "bar",
@@ -140,7 +113,7 @@ async function donut_chart() {
             'rgba(201, 203, 207, 0.2)'
           ],
           borderWidth: 1,
-          data: data,
+          data: data
         },
       ],
     },
@@ -164,10 +137,12 @@ function fill_cards() {
   let acumulador = "";
   for (let c of last_set.cards) {
     let template = `<div class="poke-card-exibition col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                      <img src="${getImageURL(c.image)}" 
-                          class="rounded mx-auto d-block" 
-                          alt="${c.name}"
-                          width="100%">
+                      <a href="./card.html?id=${c.id}">
+                        <img src="${getImageURL(c.image)}" 
+                        class="rounded mx-auto d-block" 
+                        alt="${c.name}"
+                        width="100%">
+                      </a>
                     </div>`;
 
     carousel_mobile.innerHTML += `<div class="carousel-item">
@@ -199,3 +174,7 @@ function fill_cards() {
   carousel.querySelector(".carousel-item").classList.add("active");
   carousel_mobile.querySelector(".carousel-item").classList.add("active");
 }
+
+getParams("set");
+
+
