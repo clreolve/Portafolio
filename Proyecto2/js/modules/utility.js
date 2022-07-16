@@ -33,4 +33,8 @@ function getParams(param){
   console.log(res);
 }
 
-export { fetch_json, getImageURL, getParams};
+function r404(){
+  location.href="./404.html";
+}
+
+export { fetch_json, getImageURL, getParams, r404};

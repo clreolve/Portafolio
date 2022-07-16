@@ -1,11 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>PokeTCG</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="./source/images/favicon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+
+    <!-- Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar bg-secondary  pe-4 pb-3">
+            <nav class="navbar  bg-secondary mt-5 navbar-dark">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary">
+                        
+                    </i>PokeTCG
+                </h3>
+                </a>
+
+                <img src="./source/images/icon.webp" 
+                        width="100%" 
+                        style="aspect-ratio: 1/1;" 
+                        alt="" srcset=""
+                        class="mx-4 mb-3">
+
+                <div class="navbar-nav w-100">
+                    <a href="index.html" class="nav-item nav-link">
+                        <i class="fa fa-tachometer-alt me-2"></i>Nueva Expansión</a>
+                    <a href="./all_tipos.html" class="nav-item nav-link">
+                        <i class="fa fa-dragon"></i>
+                        Tipos</a>
+                    <a href="./all_series.html" class="nav-item nav-link">
+                        <i class="fa fa-tv"></i>
+                        Series</a>
+                    <a href="./all_sets.html" class="nav-item nav-link">
+                        <i class="fa fa-box"></i>
+                        Sets</a>
+                </div>
+            </nav>
+        </div>
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4 nav-item">
+                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+                </form>
+                
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item">
+                        <a href="#footer" class="nav-link">
+                            <!--<span class="d-none d-lg-inline-flex">Creditos</span>-->
+                            Creditos
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!-- El contenido va aqui --------------------------------------------------------------------->
+
+            <!--Carousel Start------------------------------->
+            <!-- Carrusel -->
+            <div class="container-fluid pt-4 px-4 only-desktop-element">
+                <div class="bg-secondary text-center rounded p-4">
+
+                    <h2 class="mb-0">
+                        La nueva expansión ya esta aquí !!!
+                    </h2>
+                    <h1 class="nb-0">
+                        <span class="set_name">[Nombre del Set]</span>
+                    </h1>
+
+                    <a href="#all_cards_set_gallery">Ver Set</a>
+
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="carrousel_items">
+
+                            <!---->
+
+                        </div>
+                        <button class="carousel-control-prev m-0" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next m-0" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carrusel Mobile-->
+            <div class="container-fluid pt-4 px-4 only-mobile-element">
+                <div class="bg-secondary text-center rounded p-4">
+
+                    <h1 class="mb-0">
+                        <span class="set_name">[Nombre del Set]</span> ya esta aquí !!!
+                    </h1>
+                    <a href="#all_cards_set_gallery">Ver Set</a>
+
+                    <div id="carousel_mobile" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="carrousel_items_mobile">
+                            <!---->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel_mobile" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel_mobile" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Carousel End -------------------------------->
+
+            <!-- plot set-->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary text-center rounded p-4">
+
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <h3 class="mb-4">Distribución Tipos en <span class="set_name">[Nombre del Set]</span></h3>
+                        <canvas id="doughnut-chart" width="557" height="557" style="display: block; box-sizing: border-box; height: 557px; width: 557px;"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- table set-->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary text-center rounded p-4">
+                    <div class="table-responsive">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+
+                            <tbody>
+                                <tr>
+                                    <th class="text-white">Nombre del Set</th>
+                                    <td class="set_name">[nombre del set]</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-white">Fecha de Liberación</th>
+                                    <td class="fecha_liberacion">[fecha de liberación]</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-white">Numero de cartas del set</th>
+                                    <td class="ntotalcards">[Numero de cartas del set]</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-white">Serie</th>
+                                    <td class="serie_link"><!-- <a href="./series.html?serie=idserie">[Serie]</a> --></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Pokemon Cards -->
+
+            <div id="all_cards_set_gallery" class="container-fluid pt-4 px-4">
+                <div class="bg-secondary text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Todas Las cartas</h6>
+                    </div>
+
+                    <div class="container">
+                        <div class="row g-3" id="last-set-box-home">
+                            <!--columnas-->
+                          <div class="poke-card-exibition col-6 col-sm-6 col-md-3 col-xxl-2">
+                            <img src="https://assets.tcgdex.net/es/swsh/swsh10/TG30/high.webp" 
+                                class="rounded mx-auto d-block" 
+                                alt="..."
+                                width="100%">
+                          </div>
+
+                        </div>
+                      </div>
+
+                </div>
+            </div>
+
+            <!--------------------------------------------------------------------------------------------->
+
+
+            <!-- Footer -->
+            <div id="footer" class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">PokeTCG</a>, All Right Reserved. 
+                        </div>
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                            Created By: <a href="https://github.com/clreolve" target="_blank">Reynaldo Olvera</a>
+                            <br>
+                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                            <br>
+                            Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+
+    <!-- Personal JavaScript-->
+    <script type="module" src="./js/card.js"></script>
+    <!-- End Personal JavaScript-->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
