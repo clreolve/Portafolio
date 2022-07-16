@@ -1,12 +1,7 @@
 import { API } from "./modules/api.js";
 import { fetch_json, getImageURL, getParams } from "./modules/utility.js";
 const ES = new API("es");
-const EN = new API("en");
 
-let EScards = [];
-//let ENcards = [];
-let types = [];
-let categories = [];
 let sets = [];
 
 //INFO LAST SET
@@ -18,13 +13,7 @@ let cards_last_set = [];
 
 window.onload = async () => {
   
-  EScards = await ES.getAllCards();
-  //ENcards = await EN.getAllCards();
-  types = await ES.getTypes();
-  categories = await ES.getCategories();
   sets = await ES.getSets();
-  types = await ES.getTypes();
-
   last_set = await get_last_set();
   cards_last_set = await Promise.all(
     last_set.cards.map(async (card) => {

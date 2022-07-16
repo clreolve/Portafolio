@@ -6,9 +6,14 @@
 async function fetch_json(url) {
   try {
     let res = await fetch(url);
+
+    switch (res.status){
+      case 404:
+        return undefined;
+    }
+
     let data = await res.json();
-    //await localStorage.setItem(backup, JSON.stringify(res)) //guardamos un respaldo
-    //return JSON.parse(localStorage.getItem(backup));
+
     return data;
   } catch (error) {
     console.error;
@@ -30,7 +35,7 @@ function getParams(param){
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const res = urlParams.get(param)
-  console.log(res);
+  return res;
 }
 
 function r404(){
