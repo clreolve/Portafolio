@@ -1,5 +1,5 @@
-import { API } from "./api.js";
-import { fetch_json, getImageURL, getParams } from "./utility.js";
+import { API } from "./modules/api.js";
+import { fetch_json, getImageURL, getParams } from "./modules/utility.js";
 const ES = new API("es");
 const EN = new API("en");
 
@@ -17,6 +17,7 @@ let last_set = [];
 let cards_last_set = [];
 
 window.onload = async () => {
+  
   EScards = await ES.getAllCards();
   //ENcards = await EN.getAllCards();
   types = await ES.getTypes();
@@ -40,22 +41,20 @@ async function get_last_set() {
 }
 
 async function last_set_fill() {
+  //obtenemos categorias y tipos
   cards_last_set.forEach((el) => {
-    ncategories[el.category] =
-      ncategories[el.category] == undefined ? 1 : ncategories[el.category] + 1;
+    ncategories[el.category] = ncategories[el.category] == undefined ? 1 : ncategories[el.category] + 1;
     try {
-      ntypes[el.types[0]] =
-        ntypes[el.types[0]] == undefined ? 1 : ntypes[el.types[0]] + 1;
-    } catch {
-      /** */
-    }
+      ntypes[el.types[0]] = ntypes[el.types[0]] == undefined ? 1 : ntypes[el.types[0]] + 1;
+    } catch { /** */ }
   });
 
+  //total de pokemons, entrenador y cartas
   let ntotalcards = last_set.cardCount.total;
   let npokemons = ncategories["Pokémon"];
   let ntrainers = ncategories["Entrenador"];
 
-  /** info del nuevo set */
+  /** Leenando la pagina de info del nuevo set */
   document.querySelectorAll(".set_name").forEach((element) => {
     element.innerHTML = last_set.name;
   });
@@ -75,10 +74,10 @@ async function last_set_fill() {
   fill_cards();
 
   /* donut chart */
-  await donut_chart(last_set, types);
+  await chart();
 }
 
-async function donut_chart() {
+async function chart() {
   var ctx6 = $("#doughnut-chart").get(0).getContext("2d");
   let data = [];
   let keys = [];
@@ -171,10 +170,9 @@ function fill_cards() {
     }
   }
 
+  //ponemos en activo el item  de cada carousel
   carousel.querySelector(".carousel-item").classList.add("active");
   carousel_mobile.querySelector(".carousel-item").classList.add("active");
 }
-
-getParams("set");
 
 

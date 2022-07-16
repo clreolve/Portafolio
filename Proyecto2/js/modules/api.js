@@ -32,6 +32,7 @@ class API {
   }
 
   async getCard(id){
+
     return await fetch_json(this.allcards + `/${id}`);
   }
 

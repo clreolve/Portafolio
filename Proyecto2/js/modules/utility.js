@@ -15,6 +15,7 @@ async function fetch_json(url) {
     return undefined;
   }
 }
+
 /**
  * Return source of image
  * @param {String} url url of image
