@@ -19,7 +19,6 @@ let types_cards;
 
 window.onload = async () => {
   sets = await ES.getSets();
-  console.log(await ES.get_all_for_type(id))
   types_cards = await ES.get_all_for_type(id);
 
   if (types_cards == undefined) {
@@ -66,14 +65,12 @@ async function set_content() {
 
   let ncards = cards_last_set.length;
   let npages = Math.ceil(ncards / cantidad);
-  console.log(cards_last_set)
 
   let start = (page - 1) * cantidad;
   let end = page * cantidad;
 
   for (let i = start; i < end; i++) {
     let c = cards_last_set[i];
-    console.log(cards_last_set)
     if(c != undefined) {
       
       let template = `<div class="poke-card-exibition col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
