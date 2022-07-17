@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="./source/images/icon.webp" rel="icon">
+    <link href="./source/images/favicon.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,27 +44,31 @@
 
 
         <!-- Sidebar Start -->
-        <div class="sidebar  pe-4 pb-3">
-            <nav class="navbar  bg-secondary navbar-dark">
+        <div class="sidebar bg-secondary  pe-4 pb-3">
+            <nav class="navbar  bg-secondary mt-5 navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary">
-                        <img src="./source/images/icon.webp" 
-                        height="50px" 
-                        style="aspect-ratio: 1/1;" 
-                        alt="" srcset="">
+                        
                     </i>PokeTCG
                 </h3>
                 </a>
+
+                <img src="./source/images/icon.webp" 
+                        width="100%" 
+                        style="aspect-ratio: 1/1;" 
+                        alt="" srcset=""
+                        class="mx-4 mb-3">
+
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link">
                         <i class="fa fa-tachometer-alt me-2"></i>Nueva Expansión</a>
-                    <a href="./tipos.html" class="nav-item nav-link">
+                    <a href="./all_tipos.html" class="nav-item nav-link active">
                         <i class="fa fa-dragon"></i>
                         Tipos</a>
-                    <a href="./series.html" class="nav-item nav-link">
+                    <a href="./all_series.html" class="nav-item nav-link">
                         <i class="fa fa-tv"></i>
                         Series</a>
-                    <a href="./sets.html" class="nav-item nav-link">
+                    <a href="./all_sets.html" class="nav-item nav-link">
                         <i class="fa fa-box"></i>
                         Sets</a>
                 </div>
@@ -79,14 +83,16 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4 nav-item">
-                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+                <form action="/search.html" method="get"
+                    class="d-none d-md-flex ms-4 nav-item">
+                    <input  id="search" name="search" class="form-control bg-dark border-0" type="search" placeholder="Search">
                 </form>
                 
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item">
-                        <a href="./creditos.html" class="nav-link">
-                            <span class="d-none d-lg-inline-flex">Creditos</span>
+                        <a href="#footer" class="nav-link">
+                            <!--<span class="d-none d-lg-inline-flex">Creditos</span>-->
+                            Creditos
                         </a>
                     </div>
                 </div>
@@ -94,104 +100,16 @@
 
 
             <!-- El contenido va aqui --------------------------------------------------------------------->
-
-            <!--Carousel Start------------------------------->
-            <!-- Carrusel -->
-            <div class="container-fluid pt-4 px-4 only-desktop-element">
-                <div class="bg-secondary text-center rounded p-4">
-
-                    <h1 class="mb-0">
-                        <span class="set_name">[Nombre del Set]</span> y sus <span class="ntotalcards">[numero de cartas total]</span> cartas ya estan aquí !!!
-                    </h1>
-
-                    <a href="#all_cards_set_gallery">Ver Set</a>
-
-                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                        <div class="carousel-inner" id="carrousel_items">
-
-                            <!---->
-
-                        </div>
-                        <button class="carousel-control-prev m-0" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next m-0" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carrusel Mobile-->
-            <div class="container-fluid pt-4 px-4 only-mobile-element">
-                <div class="bg-secondary text-center rounded p-4">
-
-                    <h1 class="mb-0">
-                        <span class="set_name">[Nombre del Set]</span> y sus <span class="ntotalcards">[numero de cartas total]</span> cartas ya estan aquí !!!
-                    </h1>
-                    <a href="#all_cards_set_gallery">Ver Set</a>
-
-                    <div id="carousel_mobile" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                        <div class="carousel-inner" id="carrousel_items_mobile">
-                            <!---->
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel_mobile" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel_mobile" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--Carousel End -------------------------------->
-
-            <!-- plot set-->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-
-                    <div class="bg-secondary rounded h-100 p-4">
-                        <h6 class="mb-4">Doughnut Chart</h6>
-                        <canvas id="doughnut-chart" width="557" height="557" style="display: block; box-sizing: border-box; height: 557px; width: 557px;"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- table set-->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-
-                            <tbody>
-                                <tr>
-                                    <th class="text-white">Nombre del Set</th>
-                                    <td>[nombre del set]</td>
-                                </tr>
-                                <tr>
-                                    <th class="text-white">Fecha de Liberación</th>
-                                    <td>[fecha de liberación]</td>
-                                </tr>
-                                <tr>
-                                    <th class="text-white">Numero de cartas del set</th>
-                                    <td>[Numero de cartas del set]</td>
-                                </tr>
-                                <tr>
-                                    <th class="text-white">Serie</th>
-                                    <td><!-- <a href="">[Serie]</a> --></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
             
             <!-- Pokemon Cards -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary text-center rounded p-4">
+                    <div id="paginacion" class="btn-toolbar" role="toolbar">
+                        <!--<a type="button" class="btn btn-secondary">5</a>-->
+                    </div>
+
+                </div>
+            </div>
 
             <div id="all_cards_set_gallery" class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
@@ -219,16 +137,19 @@
 
 
             <!-- Footer -->
-            <div class="container-fluid pt-4 px-4">
+            <div id="footer" class="container-fluid pt-4 px-4">
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
                             &copy; <a href="#">PokeTCG</a>, All Right Reserved. 
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Created By: <a href="https://github.com/clreolve" target="_blank">Reynaldo Olvera</a>
+                            <br>
                             Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                            <br>
+                            Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                            
                         </div>
                     </div>
                 </div>
@@ -242,7 +163,7 @@
 
 
     <!-- Personal JavaScript-->
-    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/sets.js"></script>
     <!-- End Personal JavaScript-->
 
     <!-- JavaScript Libraries -->
