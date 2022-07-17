@@ -103,10 +103,10 @@ async function set_content() {
 
     for(var p = 1; p<=npages; p++){
         if(p == page){
-            paginacion.innerHTML += ` <a href="./tipos.html?id=${id}&page=${p}" type="button" class="btn btn-primary">${p}</a>
+            paginacion.innerHTML += ` <a href="./sets.html?id=${id}&page=${p}" type="button" class="btn btn-primary">${p}</a>
             `;
         }else{
-            paginacion.innerHTML += ` <a href="./tipos.html?id=${id}&page=${p}"  type="button" class="btn btn-secondary">${p}</a>`;
+            paginacion.innerHTML += ` <a href="./sets.html?id=${id}&page=${p}"  type="button" class="btn btn-secondary">${p}</a>`;
         }
     }
  
