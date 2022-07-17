@@ -1,12 +1,13 @@
 # Proyecto 2
 
+## Cosas no habilitadas
+El servicio de busquedad no esta habilitado solo lleva a un archivo vacio
+
 ## API usada
 https://www.tcgdex.net/docs#/cards
 
 ## Framework Css a usar
-Bulma
+Bootstrap 5
 
-https://bulma.io/documentation/
-
-
-
+## Plantilla
+https://themewagon.com
