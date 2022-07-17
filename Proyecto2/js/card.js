@@ -27,7 +27,48 @@ window.onload = async () => {
 
   let image = await getImageURL(card.image)
 
-  document.querySelector("#image-box").innerHTML = `<div class="poke-card-exibition col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+  document.querySelector("#name-card").innerHTML = card.name;
+  document.querySelector("#rarity-card").innerHTML = card.rarity;
+
+  document.querySelector("#hp").innerHTML = card.hp;
+  document.querySelector("#categoria").innerHTML = card.category;
+  document.querySelector("#ilustrador").innerHTML = card.illustrator;
+  document.querySelector("#retiro").innerHTML = card.retreat;
+
+  let tipos = document.querySelector("#tipo");
+  for (const res of card.types) {
+    tipos.innerHTML += `<a href="../tipos.html?id=${res}" type="button" 
+    class="btn btn-primary m-2">
+    ${res}
+    </a>
+    `
+  }
+
+  let debilidad = document.querySelector("#debilidad");
+  let weaknesses = card.weaknesses == undefined ? [] : card.weaknesses
+  for (const res of weaknesses) {
+    debilidad.innerHTML += `<a href="../tipos.html?id=${res.type}" type="button" 
+    class="btn btn-outline-danger m-2">
+    ${res.value} ${res.type}
+    </a>
+    `
+  }
+
+  let resistencias = document.querySelector("#resistencias");
+  let resistances = card.resistances == undefined ? [] : card.resistances
+  for (const res of resistances) {
+    resistencias.innerHTML += `<a href="../tipos.html?id=${res.type}" type="button" 
+    class="btn btn-outline-success m-2">
+    ${res.value} ${res.type}
+    </a>
+    `
+  }
+
+
+  document.querySelector("#set-card").innerHTML = `<a class="button" href="./sets.html?id=${card.set.id}">
+    ${card.set.name}</a>`
+
+  document.querySelector("#image-box").innerHTML = `<div class="poke-card-exibition card-img-top col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
   src="./card.html?id=${card.id}">
   <img src="${image}" 
       class="rounded mx-auto d-block" 

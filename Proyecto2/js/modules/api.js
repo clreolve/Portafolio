@@ -63,6 +63,10 @@ class API {
   async getSets() {
     return await fetch_json(this.sets);
   }
+
+  async get_all_for_type(type){
+    return await fetch_json(`https://api.tcgdex.net/v2/${this.lang}/types/${type}`)
+  }
 }
 
 export { API };
