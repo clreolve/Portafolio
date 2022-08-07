@@ -1,0 +1,34 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <ng-content></ng-content>
+
+  <footer id="footer">
+    <mat-button-toggle-group class="navigation" aria-label="Font Style">
+      <mat-button-toggle class="button_navigation" onclick="" value="tasks"
+        ><mat-icon>task</mat-icon></mat-button-toggle
+      >
+      <mat-button-toggle class="button_navigation" value="groups"
+        ><mat-icon>group</mat-icon></mat-button-toggle
+      >
+      <mat-button-toggle class="button_navigation" value="forums"
+        ><mat-icon>forum</mat-icon></mat-button-toggle
+      >
+      <mat-button-toggle class="button_navigation" value="persons"
+        ><mat-icon>person</mat-icon></mat-button-toggle
+      >
+      <mat-button-toggle class="button_navigation" value="settings"
+        ><mat-icon>settings</mat-icon></mat-button-toggle
+      >
+    </mat-button-toggle-group>
+  </footer>
+</body>
