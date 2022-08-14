@@ -1,0 +1,25 @@
+<div class="container">
+  <div id="accordion">
+    <app-task-element
+      date="25/02/1997"
+      title="Cadena de prueba"
+      [id]="12"
+      body="Cuerpo de la tarea"
+    ></app-task-element>
+
+    <app-task-element
+      date="25/02/1997"
+      title="Cadena de prueba 2"
+      [id]="12123"
+      body="Cuerpo de la tarea <br> funciona</br>"
+    ></app-task-element>
+
+    <app-task-element
+      date="Ayer"
+      title="Tarea Vencida"
+      [id]="11235"
+      body="Cuerpo de la tarea <br> funciona</br>"
+      type="danger"
+    ></app-task-element>
+  </div>
+</div>
