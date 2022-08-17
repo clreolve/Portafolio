@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "curso",
+    "password": "curso",
+    "database": "proyecto3sql",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "curso",
+    "password": "curso",
+    "database": "proyecto3sql",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "curso",
+    "password": "curso",
+    "database": "proyecto3sql",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
