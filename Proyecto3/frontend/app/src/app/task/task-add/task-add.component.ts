@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScriptsService } from 'src/app/scripts.service';
 
 @Component({
   selector: 'app-task-add',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskAddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _scripts:ScriptsService) { 
+    _scripts.load(
+      [
+        "taskadd.js"
+      ]
+    )
+  }
 
   ngOnInit(): void {
   }

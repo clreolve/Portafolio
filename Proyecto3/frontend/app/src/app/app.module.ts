@@ -22,6 +22,9 @@ import { TaskGroupComponent } from './templates/partials/task-group/task-group.c
 import { TaskElementComponent } from './templates/partials/task-element/task-element.component';
 import { TaskAddComponent } from './task/task-add/task-add.component';
 
+//my services
+import { ScriptsService } from './scripts.service';
+
 //-------------------------
 
 @NgModule({
@@ -47,7 +50,9 @@ import { TaskAddComponent } from './task/task-add/task-add.component';
     BrowserAnimationsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    ScriptsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
