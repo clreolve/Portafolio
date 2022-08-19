@@ -20,6 +20,7 @@ import { ChatsComponent } from './chats/chats.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TaskGroupComponent } from './templates/partials/task-group/task-group.component';
 import { TaskElementComponent } from './templates/partials/task-element/task-element.component';
+import { TaskAddComponent } from './task/task-add/task-add.component';
 
 //-------------------------
 
@@ -37,6 +38,7 @@ import { TaskElementComponent } from './templates/partials/task-element/task-ele
     SettingsComponent,
     TaskGroupComponent,
     TaskElementComponent,
+    TaskAddComponent,
     
   ],
   imports: [
