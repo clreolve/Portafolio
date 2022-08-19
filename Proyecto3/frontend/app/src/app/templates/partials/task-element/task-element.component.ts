@@ -18,7 +18,7 @@ export class TaskElementComponent implements OnInit {
    * @Input() "date": string; //fecha limite
    */
   constructor() {
-    this.type = "primary"; //default primary
+    this.type = "info"; //default primary
   }
 
   ngOnInit(): void {}

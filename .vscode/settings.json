@@ -1,0 +1,5 @@
+{
+    "dataworkspace.excludedProjects": [
+        "Proyecto3/backend/server_api_rest/taskmanager/taskmanager.sqlproj"
+    ]
+}
