@@ -9,6 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Angular material
 
+//my services
+import { ScriptsService } from './services/scripts.service';
+
 //my components
 import { MainLayoutComponent } from './templates/main-layout/main-layout.component';
 import { NavbarComponent } from './templates/partials/navbar/navbar.component';
@@ -21,9 +24,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { TaskGroupComponent } from './templates/partials/task-group/task-group.component';
 import { TaskElementComponent } from './templates/partials/task-element/task-element.component';
 import { TaskAddComponent } from './task/task-add/task-add.component';
+import { GroupElementComponent } from './groups/group-element/group-element.component';
 
-//my services
-import { ScriptsService } from './scripts.service';
 
 //-------------------------
 
@@ -42,6 +44,7 @@ import { ScriptsService } from './scripts.service';
     TaskGroupComponent,
     TaskElementComponent,
     TaskAddComponent,
+    GroupElementComponent,
     
   ],
   imports: [
