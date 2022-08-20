@@ -1,1 +1,29 @@
-<p>group-element works!</p>
+<div attr.class="card mb-1 mt-1 bg-transparent border-primary">
+    <div attr.class="card-header d-flex justify-content-between row-12 bg-transparent border-primary">
+      <a
+        class="btn col-10 w-90 text-start border-white"
+        data-bs-toggle="collapse"
+        attr.href="#collapse_id_{{id}}"
+      >
+      {{title}}
+      <br>
+      </a>
+  
+      <div class="form-check my-auto col-1 w-10">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          attr.id="task_checkbox_{{id}}"
+          value="option1"
+        />
+      </div>
+    </div>
+    <div attr.id="collapse_id_{{id}}" class="collapse ">
+      <!---
+        data-bs-parent="#accordion"
+        ---->
+      <div class="card-body">
+        soy un grupo
+      </div>
+    </div>
+  </div>
