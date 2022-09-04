@@ -6,8 +6,23 @@ var router = express.Router();
 const Sequelize = require('sequelize');
 const Producto = require('../../models').product; 
 
+// '/api/producto/'
 router.get('/', function(req, res, next) {
     Producto.findAll()
+    .then(p => {
+        res.status(201).json(p);
+    })
+    .catch(error => res.status(400).send(error));
+}).post('/', function(req, res, next){
+    console.log(req.body);
+    res.json('soy un post');
+})
+
+router.get('/random/:cantidad', function(req, res, next) {
+    Producto.findAll({
+        order: Sequelize.literal('rand()'), 
+        limit: parseInt(req.params.cantidad),
+    })
     .then(p => {
         res.status(201).json(p);
     })
