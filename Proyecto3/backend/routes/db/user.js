@@ -61,9 +61,6 @@ router.post('/login', async function (req, res, next) {
             icon: user.icon,
             email: user.email,
           }, KEY, { expiresIn: JWT_EXPIRES_IN });
-
-        var {decoded_jwt} = require('../../modules/utitlitys')
-        console.log(await decoded_jwt(token+"12"))
         res.json(token)
         
     } catch (error) {
